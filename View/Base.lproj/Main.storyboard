@@ -33,11 +33,14 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="229"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="29"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="58"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4lU-Qg-NOh"/>
+                                        <include reference="Rr5-qi-EoF"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="cGU-8t-wTQ" userLabel="Swipe Up Stack View">
@@ -161,7 +164,7 @@
                         <color key="backgroundColor" red="0.73725497719999999" green="0.8392156959" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="LLg-n7-Oyg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7Gs-Uc-XZK"/>
-                            <constraint firstItem="LLg-n7-Oyg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9sZ-sk-dkU"/>
+                            <constraint firstItem="LLg-n7-Oyg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="9sZ-sk-dkU"/>
                             <constraint firstItem="8Zu-4N-5ec" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="79" id="KIs-Hm-VKB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Zu-4N-5ec" secondAttribute="trailing" constant="79" id="PiN-PW-gIC"/>
                             <constraint firstItem="LLg-n7-Oyg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="T66-I2-fiD"/>
@@ -194,9 +197,18 @@
                                 <exclude reference="KIs-Hm-VKB"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="cGU-8t-wTQ"/>
+                                <include reference="uzx-U8-f4P"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="LLg-n7-Oyg"/>
+                            </mask>
                             <mask key="constraints">
-                                <exclude reference="PiN-PW-gIC"/>
+                                <include reference="PiN-PW-gIC"/>
                                 <include reference="T66-I2-fiD"/>
                                 <include reference="x4J-7v-aCX"/>
                                 <include reference="V6Y-9L-fON"/>
