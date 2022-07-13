@@ -20,16 +20,17 @@ class SelectionImageClass: UIViewController {
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
         let tag = sender.tag
         for button in layoutButton {
-            if button.tag <= tag {
+            if button.tag == tag {
                 // selected
                 button.setTitle("", for: .normal)
                
                 let image = UIImage(named: "Selected")
                 button.setImage(image, for: .normal)
+            } else {
+                let image = UIImage()
+                button.setImage(image, for: .normal)
             }
-            sender.setTitle("Selected", for: .normal)
-                // not selected
-        
+            
                 
             }
         

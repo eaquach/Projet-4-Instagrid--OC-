@@ -136,7 +136,7 @@
                                             <backgroundConfiguration key="background" image="Layout 1"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="LayoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="djL-dj-wfX"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQk-CM-d5P"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK">
@@ -149,7 +149,7 @@
                                             <backgroundConfiguration key="background" image="Layout 2"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="LayoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wed-Df-4Mr"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KT-75-EPb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-lN-ygF">
@@ -162,7 +162,7 @@
                                             <backgroundConfiguration key="background" image="Layout 3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="LayoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BP3-Lx-t6I"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSD-V3-8jG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -188,21 +188,21 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="9sZ-sk-dkU"/>
+                                <exclude reference="T66-I2-fiD"/>
+                                <exclude reference="x4J-7v-aCX"/>
                                 <exclude reference="V6Y-9L-fON"/>
                                 <exclude reference="deH-Tl-clc"/>
                                 <exclude reference="io1-eN-sZ9"/>
                                 <exclude reference="knP-GZ-fNm"/>
-                                <exclude reference="9sZ-sk-dkU"/>
-                                <exclude reference="T66-I2-fiD"/>
-                                <exclude reference="x4J-7v-aCX"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="fZT-5q-1TK"/>
+                                <include reference="9sZ-sk-dkU"/>
                                 <include reference="deH-Tl-clc"/>
                                 <include reference="io1-eN-sZ9"/>
-                                <include reference="9sZ-sk-dkU"/>
                                 <exclude reference="KIs-Hm-VKB"/>
                             </mask>
                         </variation>
@@ -218,10 +218,10 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="PiN-PW-gIC"/>
-                                <include reference="V6Y-9L-fON"/>
-                                <include reference="knP-GZ-fNm"/>
                                 <include reference="T66-I2-fiD"/>
                                 <include reference="x4J-7v-aCX"/>
+                                <include reference="V6Y-9L-fON"/>
+                                <include reference="knP-GZ-fNm"/>
                             </mask>
                         </variation>
                     </view>
