@@ -15,11 +15,11 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Selection Image Class-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SelectionImageClass" customModule="Projet_4_Instagrid" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LayoutStyle" customModule="Projet_4_Instagrid" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -224,6 +224,11 @@
                                 <include reference="knP-GZ-fNm"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outlet property="icon" destination="5mO-36-a6i" id="11J-9A-c0U"/>
+                            <outlet property="label" destination="HXz-Oo-wQY" id="lkd-oV-nER"/>
+                            <outlet property="pictureStackView" destination="yML-P5-9Ua" id="BN7-v2-SIO"/>
+                        </connections>
                     </view>
                     <connections>
                         <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="w4T-r4-LPa"/>
