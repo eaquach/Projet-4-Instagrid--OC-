@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Selection Image Class-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SelectionImageClass" customModule="Projet_4_Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LayoutStyle" customModule="Projet_4_Instagrid" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,13 +83,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-fF-QiS">
                                         <rect key="frame" x="10" y="10" width="280" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtT-Hx-cVp">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtT-Hx-cVp">
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yML-P5-9Ua">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yML-P5-9Ua">
                                                 <rect key="frame" x="145" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -100,13 +100,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4cf-t8-ohR">
                                         <rect key="frame" x="10" y="155" width="280" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv9-Kq-IU7">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv9-Kq-IU7">
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-JM-Pwe">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-JM-Pwe">
                                                 <rect key="frame" x="145" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -136,7 +136,7 @@
                                             <backgroundConfiguration key="background" image="Layout 1"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQk-CM-d5P"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h9l-Qw-qJa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK">
@@ -149,7 +149,7 @@
                                             <backgroundConfiguration key="background" image="Layout 2"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KT-75-EPb"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SUV-dF-Eaf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-lN-ygF">
@@ -162,7 +162,7 @@
                                             <backgroundConfiguration key="background" image="Layout 3"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSD-V3-8jG"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FBD-Ih-Mrr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -225,15 +225,16 @@
                             </mask>
                         </variation>
                         <connections>
+                            <outlet property="button2" destination="yML-P5-9Ua" id="Gv9-GY-2vB"/>
+                            <outlet property="button4" destination="rfW-JM-Pwe" id="QzU-4x-AII"/>
                             <outlet property="icon" destination="5mO-36-a6i" id="11J-9A-c0U"/>
                             <outlet property="label" destination="HXz-Oo-wQY" id="lkd-oV-nER"/>
-                            <outlet property="pictureStackView" destination="yML-P5-9Ua" id="BN7-v2-SIO"/>
                         </connections>
                     </view>
                     <connections>
-                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="w4T-r4-LPa"/>
-                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="0Fh-uF-WeW"/>
-                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="mEd-iw-33a"/>
+                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
+                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
+                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

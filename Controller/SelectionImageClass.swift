@@ -16,7 +16,7 @@ class SelectionImageClass: UIViewController {
        
         // Do any additional setup after loading the view.
     }
-    
+     
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
         let tag = sender.tag
         for button in layoutButton {

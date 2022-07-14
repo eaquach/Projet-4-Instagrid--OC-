@@ -11,7 +11,9 @@ class LayoutStyle: UIView {
 
   @IBOutlet private var label : UILabel!
   @IBOutlet private var icon : UIImageView!
-    @IBOutlet private var pictureStackView : [UIButton]!
+  @IBOutlet private var button2 : UIButton!
+  @IBOutlet private var button4 : UIButton!
+
     
     enum Style {
         case layout1, layout2, layout3
@@ -26,11 +28,13 @@ class LayoutStyle: UIView {
     private func setStyle(_ style: Style) {
         switch style {
             case .layout1:
-                
+                button2.isHidden = true
+            
             case .layout2:
-                break
+                button4.isHidden = true
             case .layout3:
-                break
+                button4.isHidden = false
+                button2.isHidden = false
         }
     }
         
