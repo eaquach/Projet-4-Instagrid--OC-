@@ -29,7 +29,7 @@ class LayoutStyle: UIView {
         switch style {
             case .layout1:
                 button2.isHidden = true
-            
+                
             case .layout2:
                 button4.isHidden = true
             case .layout3:
