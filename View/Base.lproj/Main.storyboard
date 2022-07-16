@@ -224,6 +224,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="8bC-Xf-vdC" id="UcR-9z-ORE"/>
                         <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
                         <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
                         <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>

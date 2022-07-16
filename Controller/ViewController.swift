@@ -7,16 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerController {
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
+        
     }
 
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
+    @IBOutlet var imageView : UIImageView!
+   
     
-
+  
     
     
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
@@ -34,7 +39,7 @@ class ViewController: UIViewController {
                     }
         
                     }
-        
+    
         sender.isSelected = true
         
         switch sender.tag {
@@ -54,7 +59,10 @@ class ViewController: UIViewController {
             
         }
         
-        
-    
 }
+    
+    @IBAction func loadImageButtonTapped(_sender:UIButton) {
+        
+    }
+    
 }
