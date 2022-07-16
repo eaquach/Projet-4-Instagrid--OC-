@@ -17,11 +17,26 @@ class ViewController: UIViewController {
     @IBOutlet var layoutButton: [UIButton]!
     
 
-     
+    
     
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
-        layoutButton.forEach { $0.isSelected = true }
+        let tag = sender.tag
+                for button in layoutButton {
+                    if button.tag == tag {
+                        // selected
+                        button.setTitle("", for: .normal)
+        
+                        let image = UIImage(named: "Selected")
+                        button.setImage(image, for: .normal)
+                    } else {
+                        let image = UIImage()
+                        button.setImage(image, for: .normal)
+                    }
+        
+                    }
+        
         sender.isSelected = true
+        
         switch sender.tag {
         case 0 :
             plusButton[0].isHidden = true

@@ -125,7 +125,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Zu-4N-5ec" userLabel="Layout Stack View">
                                 <rect key="frame" x="79" y="768" width="270" height="70"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-mz-jO9">
+                                    <button contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-mz-jO9">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aUz-mz-jO9" secondAttribute="height" multiplier="1:1" id="TcU-lJ-gsh"/>
@@ -137,7 +137,7 @@
                                             <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfL-Yq-fG0"/>
                                         </connections>
                                     </button>
-                                    <button tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK">
+                                    <button tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK">
                                         <rect key="frame" x="100" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FNz-OM-8eK" secondAttribute="height" multiplier="1:1" id="m02-LF-ujj"/>
@@ -219,8 +219,6 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outlet property="button2" destination="yML-P5-9Ua" id="Gv9-GY-2vB"/>
-                            <outlet property="button4" destination="rfW-JM-Pwe" id="QzU-4x-AII"/>
                             <outlet property="icon" destination="5mO-36-a6i" id="11J-9A-c0U"/>
                             <outlet property="label" destination="HXz-Oo-wQY" id="lkd-oV-nER"/>
                         </connections>
@@ -233,13 +231,6 @@
                         <outletCollection property="plusButton" destination="yML-P5-9Ua" collectionClass="NSMutableArray" id="i1m-Iw-J7b"/>
                         <outletCollection property="plusButton" destination="tv9-Kq-IU7" collectionClass="NSMutableArray" id="iYH-al-wWe"/>
                         <outletCollection property="plusButton" destination="rfW-JM-Pwe" collectionClass="NSMutableArray" id="bhQ-8W-gWa"/>
-                        <outletCollection property="plusButton" destination="KtT-Hx-cVp" collectionClass="NSMutableArray" id="hKK-aj-ELh"/>
-                        <outletCollection property="plusButton" destination="yML-P5-9Ua" collectionClass="NSMutableArray" id="V9t-oL-T74"/>
-                        <outletCollection property="plusButton" destination="tv9-Kq-IU7" collectionClass="NSMutableArray" id="R0I-0U-Bpb"/>
-                        <outletCollection property="plusButton" destination="rfW-JM-Pwe" collectionClass="NSMutableArray" id="Jmf-Ps-e3y"/>
-                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="EnG-UV-1lh"/>
-                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="ZLZ-Jl-776"/>
-                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="eJC-Jx-quT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
