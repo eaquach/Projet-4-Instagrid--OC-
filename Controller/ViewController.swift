@@ -12,6 +12,10 @@ import UIKit
 
 class ViewController: UIViewController {
    
+
+    @IBOutlet weak var PictureStackView: UIStackView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +24,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
-    @IBOutlet var imageView : UIImageView!
    
+    
     
   
     
@@ -63,19 +67,34 @@ class ViewController: UIViewController {
         
 }
     
-    
+    @IBAction func didTapButton() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
   
             
           
             
             }
      
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("\(info)")
+        picker.dismiss(animated: true)
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+}
     
     
     
 
 
 
-
+}
 

@@ -88,12 +88,18 @@
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                                                <connections>
+                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BU-6U-tqW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yML-P5-9Ua" userLabel="PlusButton2">
                                                 <rect key="frame" x="145" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                                                <connections>
+                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="2iD-Md-wwR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -105,12 +111,18 @@
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                                                <connections>
+                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3v-ZA-0Rc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-JM-Pwe" userLabel="PlusButton4">
                                                 <rect key="frame" x="145" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                                                <connections>
+                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHp-ue-Tmu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -220,7 +232,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="8bC-Xf-vdC" id="mXd-nH-7pF"/>
+                        <outlet property="PictureStackView" destination="uzx-U8-f4P" id="7d8-HI-Oc7"/>
                         <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
                         <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
                         <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>
