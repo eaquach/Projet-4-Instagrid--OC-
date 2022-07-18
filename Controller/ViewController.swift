@@ -5,14 +5,16 @@
 // 
 //
 
+import Photos
+import PhotosUI
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerController {
-    let imagePicker = UIImagePickerController()
+
+class ViewController: UIViewController {
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
         
     }
 
@@ -61,8 +63,19 @@ class ViewController: UIViewController, UIImagePickerController {
         
 }
     
-    @IBAction func loadImageButtonTapped(_sender:UIButton) {
-        
-    }
     
-}
+  
+            
+          
+            
+            }
+     
+    
+    
+    
+    
+
+
+
+
+

@@ -83,13 +83,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-fF-QiS" userLabel="Upper Stack View">
                                         <rect key="frame" x="10" y="10" width="280" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtT-Hx-cVp" userLabel="Button1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtT-Hx-cVp" userLabel="PlusButton1">
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yML-P5-9Ua">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yML-P5-9Ua" userLabel="PlusButton2">
                                                 <rect key="frame" x="145" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -100,13 +100,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4cf-t8-ohR" userLabel="Bottom Stack view">
                                         <rect key="frame" x="10" y="155" width="280" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv9-Kq-IU7" userLabel="Button3">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv9-Kq-IU7" userLabel="PlusButton3">
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-JM-Pwe">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-JM-Pwe" userLabel="PlusButton4">
                                                 <rect key="frame" x="145" y="0.0" width="135" height="135"/>
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -125,7 +125,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Zu-4N-5ec" userLabel="Layout Stack View">
                                 <rect key="frame" x="79" y="768" width="270" height="70"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-mz-jO9">
+                                    <button contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-mz-jO9" userLabel="LayoutButton1">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aUz-mz-jO9" secondAttribute="height" multiplier="1:1" id="TcU-lJ-gsh"/>
@@ -137,7 +137,7 @@
                                             <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfL-Yq-fG0"/>
                                         </connections>
                                     </button>
-                                    <button tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK">
+                                    <button tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK" userLabel="LayoutButton2">
                                         <rect key="frame" x="100" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FNz-OM-8eK" secondAttribute="height" multiplier="1:1" id="m02-LF-ujj"/>
@@ -148,7 +148,7 @@
                                             <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1G9-TQ-ZVK"/>
                                         </connections>
                                     </button>
-                                    <button tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-lN-ygF">
+                                    <button tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-lN-ygF" userLabel="LayoutButton3">
                                         <rect key="frame" x="200" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Vb0-lN-ygF" secondAttribute="height" multiplier="1:1" id="tMV-Aa-Uf1"/>
@@ -218,13 +218,9 @@
                                 <include reference="knP-GZ-fNm"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outlet property="icon" destination="5mO-36-a6i" id="11J-9A-c0U"/>
-                            <outlet property="label" destination="HXz-Oo-wQY" id="lkd-oV-nER"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="8bC-Xf-vdC" id="UcR-9z-ORE"/>
+                        <outlet property="imageView" destination="8bC-Xf-vdC" id="mXd-nH-7pF"/>
                         <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
                         <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
                         <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>
