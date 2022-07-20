@@ -93,7 +93,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             
             for button in plusButton {
                 if button.tag == 0 {
-                    plusButton[0].setImage(image, for: .normal)
+                    plusButton[0].setImage(image, for: .selected)
                 } else if button.tag == 1 {
                     plusButton[1].setImage(image, for: .normal)
                 } else if button.tag == 2 {
