@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
     
-   
+    private var buttonImage : UIButton?
+    
     
     
     
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func didTapButton(){
+    @IBAction func didTapButton( _ sender: UIButton){
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
