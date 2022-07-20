@@ -22,9 +22,11 @@ class ViewController: UIViewController {
         
     }
     
+    
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
     
+   
     
     
     
@@ -69,12 +71,12 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func didTapButton() {
-        let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
-        vc.delegate = self
-        vc.allowsEditing = true
-        present(vc, animated: true)
+    @IBAction func didTapButton(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+       imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
     }
     
     
@@ -86,11 +88,29 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            plusButton[0].setImage(image, for: .normal)
+//            plusButton[0].setImage(image, for: .normal)
+//        }
             
+            for button in plusButton {
+                if button.tag == 0 {
+                    plusButton[0].setImage(image, for: .normal)
+                } else if button.tag == 1 {
+                    plusButton[1].setImage(image, for: .normal)
+                } else if button.tag == 2 {
+                    plusButton[2].setImage(image, for: .normal)
+            } else if button.tag == 3 {
+                plusButton[3].setImage(image, for: .normal)
+            }
+            }
+        
+            
+        
+    picker.dismiss(animated: true)
         }
         
-        picker.dismiss(animated: true)
+        
+        
+        
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true)
@@ -102,5 +122,25 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
     
     
+//    private func gestureSetup() {
+//           gestureSwipeRecognizer.delegate = self
+//
+//           let leftSwipe =  UISwipeGestureRecognizer(target: self,
+//                                                     action: #selector(self.handleGesture(gesture:)))
+//           leftSwipe.direction = .left
+//           view.addGestureRecognizer(leftSwipe)
+//
+//           let upSwipe =  UISwipeGestureRecognizer(target: self,
+//                                                   action: #selector(self.handleGesture(gesture:)))
+//           upSwipe.direction = .up
+//           view.addGestureRecognizer(upSwipe)
+//       }
+//    let deviceOrientation = UIApplication.shared.statusBarOrientation
+//            let swipeDirection: UISwipeGestureRecognizer.Direction = deviceOrientation == .portrait ? .up : .left
+//            gridViewAnimateOut(to: swipeDirection)
+//
+//
+//
 }
+
 
