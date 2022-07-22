@@ -106,7 +106,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                 <connections>
-                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BU-6U-tqW"/>
+                                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="npw-sp-DAH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yML-P5-9Ua" userLabel="PlusButton1">
@@ -114,9 +114,6 @@
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
-                                                <connections>
-                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="2iD-Md-wwR"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -129,7 +126,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                 <connections>
-                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3v-ZA-0Rc"/>
+                                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dj5-3F-2mh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-JM-Pwe" userLabel="PlusButton3">
@@ -138,7 +135,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                 <connections>
-                                                    <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHp-ue-Tmu"/>
+                                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4d-vH-bR3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -163,7 +160,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <connections>
-                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfL-Yq-fG0"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hw-wD-E6h"/>
                                         </connections>
                                     </button>
                                     <button tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK" userLabel="LayoutButton2">
@@ -174,7 +171,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <connections>
-                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1G9-TQ-ZVK"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v9V-4c-CWG"/>
                                         </connections>
                                     </button>
                                     <button tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-lN-ygF" userLabel="LayoutButton3">
@@ -185,7 +182,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <connections>
-                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M9I-pe-has"/>
+                                            <action selector="layoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAB-Ah-FLd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -249,13 +246,13 @@
                     </view>
                     <connections>
                         <outlet property="PictureStackView" destination="uzx-U8-f4P" id="7d8-HI-Oc7"/>
-                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
-                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
-                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>
-                        <outletCollection property="plusButton" destination="KtT-Hx-cVp" collectionClass="NSMutableArray" id="Exo-sT-jiX"/>
-                        <outletCollection property="plusButton" destination="yML-P5-9Ua" collectionClass="NSMutableArray" id="i1m-Iw-J7b"/>
-                        <outletCollection property="plusButton" destination="tv9-Kq-IU7" collectionClass="NSMutableArray" id="iYH-al-wWe"/>
-                        <outletCollection property="plusButton" destination="rfW-JM-Pwe" collectionClass="NSMutableArray" id="bhQ-8W-gWa"/>
+                        <outletCollection property="plusButton" destination="tv9-Kq-IU7" collectionClass="NSMutableArray" id="Zm5-gf-ycI"/>
+                        <outletCollection property="plusButton" destination="rfW-JM-Pwe" collectionClass="NSMutableArray" id="qN9-ch-epJ"/>
+                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="zxz-TG-1Pq"/>
+                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="QO4-ov-hwF"/>
+                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="zxx-RQ-paM"/>
+                        <outletCollection property="plusButton" destination="yML-P5-9Ua" collectionClass="NSMutableArray" id="FvX-GC-P2f"/>
+                        <outletCollection property="plusButton" destination="KtT-Hx-cVp" collectionClass="NSMutableArray" id="fXr-ZV-dCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
