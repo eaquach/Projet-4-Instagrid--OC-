@@ -12,7 +12,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-   //Properties used for the methods
+    //Properties used for the methods
     private var tappedImageButtonTag = Int()
     private let imagePicker = UIImagePickerController()
     
@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
+    
+    
+    
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
         let tag = sender.tag
         for button in layoutButton {
@@ -51,17 +54,17 @@ class ViewController: UIViewController {
         sender.isSelected = true
         
         switch sender.tag {
-        case 0 :
-            plusButton[1].isHidden = true
-            plusButton[3].isHidden = false
-        case 1 :
-            plusButton[1].isHidden = false
-            plusButton[3].isHidden = true
-        case 2 :
-            plusButton[1].isHidden = false
-            plusButton[3].isHidden = false
-        default:
-            break
+            case 0 :
+                plusButton[1].isHidden = true
+                plusButton[3].isHidden = false
+            case 1 :
+                plusButton[1].isHidden = false
+                plusButton[3].isHidden = true
+            case 2 :
+                plusButton[1].isHidden = false
+                plusButton[3].isHidden = false
+            default:
+                break
         }
     }
     
@@ -70,7 +73,10 @@ class ViewController: UIViewController {
         presentImagePicker()
     }
     
- 
+    
+    
+    
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -78,15 +84,17 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             plusButton[tappedImageButtonTag].setImage(image, for: .normal)
+         
+            
         }
         dismiss(animated: true, completion: nil)
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
+    
 }
-
 
 
 
