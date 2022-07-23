@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        layoutButton[2].setImage(UIImage(named: "Selected"), for: .normal)
     
     }
     
