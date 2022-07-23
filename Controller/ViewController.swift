@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    
     }
     
     private func presentImagePicker() {
@@ -33,6 +35,9 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
+    private func resizeImageButton () {
+        
+    }
     
     
     
