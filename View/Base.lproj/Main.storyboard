@@ -41,10 +41,10 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="cGU-8t-wTQ" userLabel="Swipe Up Stack View">
-                                <rect key="frame" x="152.33333333333334" y="237.00000000000003" width="123.33333333333334" height="55.333333333333343"/>
+                                <rect key="frame" x="136" y="237" width="156" height="57"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="749" image="Arrow Up" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-36-a6i">
-                                        <rect key="frame" x="51.666666666666657" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="68" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="BUS-6p-t9v">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
@@ -62,12 +62,12 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXz-Oo-wQY">
-                                        <rect key="frame" x="0.0" y="33" width="123.33333333333333" height="22.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="33" width="156" height="24"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Swipe up to share">
                                                 <attributes>
                                                     <color key="NSColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="20" name="Delm-Medium"/>
+                                                    <font key="NSFont" metaFont="system" size="20"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -79,7 +79,7 @@
                                                 <fragment content="Swipe Left To Share">
                                                     <attributes>
                                                         <color key="NSColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <font key="NSFont" size="20" name="Delm-Medium"/>
+                                                        <font key="NSFont" metaFont="system" size="20"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
