@@ -12,26 +12,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
+   //Properties used for the methods
+    private var tappedImageButtonTag = Int()
+    private let imagePicker = UIImagePickerController()
     
+    //IBOutlets
     @IBOutlet weak var PictureStackView: UIStackView!
-    
+    @IBOutlet var plusButton: [UIButton]!
+    @IBOutlet var layoutButton: [UIButton]!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    
-    @IBOutlet var plusButton: [UIButton]!
-    @IBOutlet var layoutButton: [UIButton]!
-    
-    private var buttonImage : UIButton?
-    
-    
-    
-    
-    
+    private func presentImagePicker() {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
     
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
         let tag = sender.tag
@@ -46,83 +46,52 @@ class ViewController: UIViewController {
                 let image = UIImage()
                 button.setImage(image, for: .normal)
             }
-            
         }
         
         sender.isSelected = true
         
         switch sender.tag {
-            case 0 :
-                plusButton[0].isHidden = true
-                plusButton[3].isHidden = false
-            case 1 :
-                plusButton[0].isHidden = false
-                plusButton[3].isHidden = true
-                
-                
-            case 2 :
-                plusButton[0].isHidden = false
-                plusButton[3].isHidden = false
-            default:
-                break
-                
+        case 0 :
+            plusButton[1].isHidden = true
+            plusButton[3].isHidden = false
+        case 1 :
+            plusButton[1].isHidden = false
+            plusButton[3].isHidden = true
+        case 2 :
+            plusButton[1].isHidden = false
+            plusButton[3].isHidden = false
+        default:
+            break
         }
-        
     }
     
-    
-    
-    @IBAction func didTapButton( _ sender: UIButton){
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-       imagePicker.allowsEditing = true
-        present(imagePicker, animated: true)
+    @IBAction func didTapButton(_ sender: UIButton) {
+        tappedImageButtonTag = sender.tag
+        presentImagePicker()
     }
     
-    
-    
-    
+ 
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-//            plusButton[0].setImage(image, for: .normal)
-//        }
-            
-            for button in plusButton {
-                if button.tag == 0 {
-                    plusButton[0].setImage(image, for: .selected)
-                } else if button.tag == 1 {
-                    plusButton[1].setImage(image, for: .normal)
-                } else if button.tag == 2 {
-                    plusButton[2].setImage(image, for: .normal)
-            } else if button.tag == 3 {
-                plusButton[3].setImage(image, for: .normal)
-            }
-            }
-        
-            
-        
-    picker.dismiss(animated: true)
+            plusButton[tappedImageButtonTag].setImage(image, for: .normal)
         }
-        
-        
-        
-        
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.dismiss(animated: true)
-        }
+        dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
-    
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+}
+
+
+
+
+
+
 //    private func gestureSetup() {
 //           gestureSwipeRecognizer.delegate = self
 //
@@ -142,6 +111,4 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 //
 //
 //
-}
-
-
+//}
