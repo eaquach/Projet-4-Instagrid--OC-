@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var PictureStackView: UIStackView!
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
-  
     
     
     override func viewDidLoad() {
@@ -87,4 +86,5 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true)
     }
 }
+
 

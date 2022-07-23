@@ -114,6 +114,9 @@
                                                 <color key="backgroundColor" red="0.99607843159999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                                                <connections>
+                                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRR-9U-bBB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -246,13 +249,13 @@
                     </view>
                     <connections>
                         <outlet property="PictureStackView" destination="uzx-U8-f4P" id="7d8-HI-Oc7"/>
-                        <outletCollection property="plusButton" destination="tv9-Kq-IU7" collectionClass="NSMutableArray" id="Zm5-gf-ycI"/>
-                        <outletCollection property="plusButton" destination="rfW-JM-Pwe" collectionClass="NSMutableArray" id="qN9-ch-epJ"/>
-                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="zxz-TG-1Pq"/>
-                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="QO4-ov-hwF"/>
-                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="zxx-RQ-paM"/>
-                        <outletCollection property="plusButton" destination="yML-P5-9Ua" collectionClass="NSMutableArray" id="FvX-GC-P2f"/>
-                        <outletCollection property="plusButton" destination="KtT-Hx-cVp" collectionClass="NSMutableArray" id="fXr-ZV-dCM"/>
+                        <outletCollection property="plusButton" destination="KtT-Hx-cVp" collectionClass="NSMutableArray" id="b15-gU-rnc"/>
+                        <outletCollection property="plusButton" destination="tv9-Kq-IU7" collectionClass="NSMutableArray" id="fMQ-JI-CYX"/>
+                        <outletCollection property="plusButton" destination="rfW-JM-Pwe" collectionClass="NSMutableArray" id="YVG-uq-db7"/>
+                        <outletCollection property="plusButton" destination="yML-P5-9Ua" collectionClass="NSMutableArray" id="nRr-bT-bgk"/>
+                        <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="WJO-44-XHe"/>
+                        <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="Jcy-O4-HAC"/>
+                        <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="oF7-ch-Mdm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

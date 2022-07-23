@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Projet 4 Instagrid
 //
-// 
+//
 //
 
 import UIKit
