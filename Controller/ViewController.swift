@@ -8,7 +8,18 @@
 import Photos
 import PhotosUI
 import UIKit
-
+struct LayoutPosition {
+    static let topLeft = 0
+    
+    
+    
+    static let topRight = 1
+    
+    
+    
+    
+    
+}
 
 class ViewController: UIViewController {
     
@@ -35,9 +46,7 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
-    private func resizeImageButton () {
-        
-    }
+ 
     
     
     
@@ -60,7 +69,7 @@ class ViewController: UIViewController {
         
         switch sender.tag {
             case 0 :
-                plusButton[1].isHidden = true
+                plusButton[LayoutPosition.topRight].isHidden = true
                 plusButton[3].isHidden = false
             case 1 :
                 plusButton[1].isHidden = false
