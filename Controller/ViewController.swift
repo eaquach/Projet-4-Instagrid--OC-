@@ -8,6 +8,7 @@
 import Photos
 import PhotosUI
 import UIKit
+import SwiftUI
 
 
 struct LayoutPosition {
@@ -20,6 +21,8 @@ struct LayoutPosition {
     static let bottomRight = 3
     
 }
+
+
 
 class ViewController: UIViewController {
     
@@ -34,35 +37,48 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var SwipeArrow: UIImageView!
     
-    @IBAction func SwipeAction(_ sender: Any) {
-        
+    @IBAction func SwipeActionShare(_ sender: UISwipeGestureRecognizer) {
+
+    }
+    var swipe : UISwipeGestureRecognizer!
+    
+    func swipeShare (_ sender: UISwipeGestureRecognizer) {
+        switch sender.state {
+            case .began, .changed:
+            animateSwipeView(gesture: sender)
+            
+            default:
+                break
+    }
+   
         
     }
+    
+    private func animateSwipeView(gesture: UISwipeGestureRecognizer) {
+        let translation = gesture.view?.transform
+    }
+    
+    private func picturesShared(){
+    
+}
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutButton[2].setImage(UIImage(named: "Selected"), for: .normal)
         SwipeArrow.isUserInteractionEnabled = true
         
-        let swipeUp = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
-        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
-        SwipeArrow.addGestureRecognizer(swipeUp)
+        swipe = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
+        swipe.direction = UISwipeGestureRecognizer.Direction.up
+        SwipeArrow.addGestureRecognizer(swipe)
         
-        let swipeLeft = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
-        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
-        SwipeArrow.addGestureRecognizer(swipeLeft)
+        
+      
     }
     
     @objc func swipeGesture(sendr: UISwipeGestureRecognizer?) {
-        if let swipeGesture = sendr {
-            switch swipeGesture.direction {
-                case UISwipeGestureRecognizer.Direction.left:
-                    SwipeArrow.image = UIImage(named: "Arrow Left")
-                case UISwipeGestureRecognizer.Direction.up:
-                    SwipeArrow.image = UIImage(named: "Arrow Up")
-                default:
-                    break
-            }
-        }
+      // generate UImage from pciture stack view
+        // invoke sharing menu with UImage in parameter
     }
     
     
@@ -73,7 +89,7 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true)
     }
     
- 
+    
     
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
         let tag = sender.tag
@@ -120,7 +136,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             plusButton[tappedImageButtonTag].setImage(image, for: .normal)
-         
+            
             
         }
         dismiss(animated: true, completion: nil)
@@ -129,6 +145,18 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
+   
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            swipe.direction = .left
+        
+        } else { swipe.direction = .up
+    }
+    
+    
+    }
+    
     
 }
 
@@ -136,19 +164,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 
 
-//    private func gestureSetup() {
-//           gestureSwipeRecognizer.delegate = self
-//
-//           let leftSwipe =  UISwipeGestureRecognizer(target: self,
-//                                                     action: #selector(self.handleGesture(gesture:)))
-//           leftSwipe.direction = .left
-//           view.addGestureRecognizer(leftSwipe)
-//
-//           let upSwipe =  UISwipeGestureRecognizer(target: self,
-//                                                   action: #selector(self.handleGesture(gesture:)))
-//           upSwipe.direction = .up
-//           view.addGestureRecognizer(upSwipe)
-//       }
+
 //    let deviceOrientation = UIApplication.shared.statusBarOrientation
 //            let swipeDirection: UISwipeGestureRecognizer.Direction = deviceOrientation == .portrait ? .up : .left
 //            gridViewAnimateOut(to: swipeDirection)

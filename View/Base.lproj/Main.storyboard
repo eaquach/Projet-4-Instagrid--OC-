@@ -61,9 +61,6 @@
                                                 <include reference="aza-s3-1fZ"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="mLa-nR-n3A" appends="YES" id="GdN-e9-y7H"/>
-                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXz-Oo-wQY">
                                         <rect key="frame" x="0.0" y="33" width="123.33333333333333" height="22.333333333333329"/>
@@ -271,6 +268,7 @@
                 <swipeGestureRecognizer direction="up" id="mLa-nR-n3A">
                     <connections>
                         <action selector="SwipeAction:" destination="BYZ-38-t0r" id="8Rt-hs-IfF"/>
+                        <outlet property="delegate" destination="uzx-U8-f4P" id="k74-En-JmT"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
