@@ -8,16 +8,16 @@
 import Photos
 import PhotosUI
 import UIKit
+
+
 struct LayoutPosition {
     static let topLeft = 0
     
-    
-    
     static let topRight = 1
     
+    static let bottomLeft = 2
     
-    
-    
+    static let bottomRight = 3
     
 }
 
@@ -32,12 +32,39 @@ class ViewController: UIViewController {
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
     
+    @IBOutlet weak var SwipeArrow: UIImageView!
     
+    @IBAction func SwipeAction(_ sender: Any) {
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutButton[2].setImage(UIImage(named: "Selected"), for: .normal)
-    
+        SwipeArrow.isUserInteractionEnabled = true
+        
+        let swipeUp = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
+        SwipeArrow.addGestureRecognizer(swipeUp)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        SwipeArrow.addGestureRecognizer(swipeLeft)
     }
+    
+    @objc func swipeGesture(sendr: UISwipeGestureRecognizer?) {
+        if let swipeGesture = sendr {
+            switch swipeGesture.direction {
+                case UISwipeGestureRecognizer.Direction.left:
+                    SwipeArrow.image = UIImage(named: "Arrow Left")
+                case UISwipeGestureRecognizer.Direction.up:
+                    SwipeArrow.image = UIImage(named: "Arrow Up")
+                default:
+                    break
+            }
+        }
+    }
+    
     
     private func presentImagePicker() {
         imagePicker.sourceType = .photoLibrary
@@ -47,8 +74,6 @@ class ViewController: UIViewController {
     }
     
  
-    
-    
     
     @IBAction func layoutButtonTapped(_ sender: UIButton) {
         let tag = sender.tag
@@ -70,13 +95,13 @@ class ViewController: UIViewController {
         switch sender.tag {
             case 0 :
                 plusButton[LayoutPosition.topRight].isHidden = true
-                plusButton[3].isHidden = false
+                plusButton[LayoutPosition.bottomRight].isHidden = false
             case 1 :
-                plusButton[1].isHidden = false
-                plusButton[3].isHidden = true
+                plusButton[LayoutPosition.topRight].isHidden = false
+                plusButton[LayoutPosition.bottomRight].isHidden = true
             case 2 :
-                plusButton[1].isHidden = false
-                plusButton[3].isHidden = false
+                plusButton[LayoutPosition.topRight].isHidden = false
+                plusButton[LayoutPosition.bottomRight].isHidden = false
             default:
                 break
         }
@@ -86,9 +111,6 @@ class ViewController: UIViewController {
         tappedImageButtonTag = sender.tag
         presentImagePicker()
     }
-    
-    
-    
     
     
 }

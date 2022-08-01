@@ -45,6 +45,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="749" image="Arrow Up" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-36-a6i">
                                         <rect key="frame" x="51.666666666666657" y="0.0" width="20" height="20"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="BUS-6p-t9v">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
@@ -60,6 +61,9 @@
                                                 <include reference="aza-s3-1fZ"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mLa-nR-n3A" appends="YES" id="GdN-e9-y7H"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXz-Oo-wQY">
                                         <rect key="frame" x="0.0" y="33" width="123.33333333333333" height="22.333333333333329"/>
@@ -88,9 +92,11 @@
                                         </variation>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <variation key="heightClass=compact" alignment="fill" axis="horizontal"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="subviews">
+                                        <include reference="5mO-36-a6i"/>
                                         <include reference="HXz-Oo-wQY"/>
                                     </mask>
                                 </variation>
@@ -232,6 +238,7 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="cGU-8t-wTQ"/>
                                 <include reference="uzx-U8-f4P"/>
                             </mask>
                         </variation>
@@ -250,6 +257,7 @@
                     </view>
                     <connections>
                         <outlet property="PictureStackView" destination="uzx-U8-f4P" id="7d8-HI-Oc7"/>
+                        <outlet property="SwipeArrow" destination="5mO-36-a6i" id="e9O-ez-3nL"/>
                         <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
                         <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
                         <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>
@@ -260,6 +268,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="mLa-nR-n3A">
+                    <connections>
+                        <action selector="SwipeAction:" destination="BYZ-38-t0r" id="8Rt-hs-IfF"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="16.923076923076923" y="95.97156398104265"/>
         </scene>
