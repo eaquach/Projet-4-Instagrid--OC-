@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         layoutButton[2].setImage(UIImage(named: "Selected"), for: .normal)
         SwipeArrow.isUserInteractionEnabled = true
-        
+    
         swipe = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
         swipe.direction = UISwipeGestureRecognizer.Direction.up
         SwipeArrow.addGestureRecognizer(swipe)
@@ -77,9 +77,35 @@ class ViewController: UIViewController {
     }
     
     @objc func swipeGesture(sendr: UISwipeGestureRecognizer?) {
+        let translationTransform = CGAffineTransform(translationX: 0, y: -300)
+        // translation à mettre pour le portrait
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+            self.SwipeArrow.transform = translationTransform
+        } completion: { success in
+            if success {
+                self.shareView()
+            }
+        }
+
+        
+    }
+        
+        private func shareView() {
+            print("")
+            let translationTransform = CGAffineTransform(translationX: 0, y: 0)
+            UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseIn) { // check
+                self.SwipeArrow.transform = translationTransform
+            } completion: { success in
+                if success {
+                    self.shareView()
+                }
+            }
+        }
+    
+        
       // generate UImage from pciture stack view
         // invoke sharing menu with UImage in parameter
-    }
+    
     
     
     private func presentImagePicker() {
@@ -128,6 +154,13 @@ class ViewController: UIViewController {
         presentImagePicker()
     }
     
+    func animateSwipeAndShare() {
+    
+//        let animation = CABasicAnimation(keyPath: "position")
+//        animation.fromValue =
+    }
+//    
+    
     
 }
 
@@ -165,10 +198,4 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 
 
-//    let deviceOrientation = UIApplication.shared.statusBarOrientation
-//            let swipeDirection: UISwipeGestureRecognizer.Direction = deviceOrientation == .portrait ? .up : .left
-//            gridViewAnimateOut(to: swipeDirection)
-//
-//
-//
-//}
+
