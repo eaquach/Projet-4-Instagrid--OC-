@@ -255,6 +255,7 @@
                     <connections>
                         <outlet property="PictureStackView" destination="uzx-U8-f4P" id="7d8-HI-Oc7"/>
                         <outlet property="SwipeArrow" destination="5mO-36-a6i" id="e9O-ez-3nL"/>
+                        <outlet property="swipeUpStackView" destination="cGU-8t-wTQ" id="M1f-Ax-a2y"/>
                         <outletCollection property="layoutButton" destination="aUz-mz-jO9" collectionClass="NSMutableArray" id="p5H-sF-KFd"/>
                         <outletCollection property="layoutButton" destination="FNz-OM-8eK" collectionClass="NSMutableArray" id="nmY-k2-uiw"/>
                         <outletCollection property="layoutButton" destination="Vb0-lN-ygF" collectionClass="NSMutableArray" id="4UQ-q8-8UW"/>

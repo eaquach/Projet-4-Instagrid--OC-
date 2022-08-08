@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     private let imagePicker = UIImagePickerController()
     
     //IBOutlets
+    @IBOutlet weak var swipeUpStackView: UIStackView!
     @IBOutlet weak var PictureStackView: UIStackView!
     @IBOutlet var plusButton: [UIButton]!
     @IBOutlet var layoutButton: [UIButton]!
@@ -66,21 +67,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutButton[2].setImage(UIImage(named: "Selected"), for: .normal)
-        SwipeArrow.isUserInteractionEnabled = true
+        swipeUpStackView.isUserInteractionEnabled = true
     
-        swipe = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sendr:)))
+        swipe = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sender:)))
         swipe.direction = UISwipeGestureRecognizer.Direction.up
-        SwipeArrow.addGestureRecognizer(swipe)
+        swipeUpStackView.addGestureRecognizer(swipe)
         
         
       
     }
     
-    @objc func swipeGesture(sendr: UISwipeGestureRecognizer?) {
+    @objc func swipeGesture(sender: UISwipeGestureRecognizer?) {
         let translationTransform = CGAffineTransform(translationX: 0, y: -300)
         // translation à mettre pour le portrait
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-            self.SwipeArrow.transform = translationTransform
+            self.swipeUpStackView.transform = translationTransform
         } completion: { success in
             if success {
                 self.shareView()
@@ -94,7 +95,7 @@ class ViewController: UIViewController {
             print("")
             let translationTransform = CGAffineTransform(translationX: 0, y: 0)
             UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseIn) { // check
-                self.SwipeArrow.transform = translationTransform
+                self.swipeUpStackView.transform = translationTransform
             } completion: { success in
                 if success {
                     self.shareView()
