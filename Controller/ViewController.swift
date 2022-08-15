@@ -24,7 +24,7 @@ struct LayoutPosition {
 
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     //Properties used for the methods
     private var tappedImageButtonTag = Int()
@@ -53,8 +53,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     func swipeShare (_ sender: UISwipeGestureRecognizer) {
         switch sender.state {
-            case .began, .changed:
-                animateSwipeView(gesture: sender)
+//            case .began, .changed:
+//                animateSwipeView(gesture: sender)
                 
             default:
                 break
@@ -63,21 +63,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
     }
     
-    private func animateSwipeView(gesture: UISwipeGestureRecognizer) {
-        let translation = gesture.view?.transform
-    }
-    
+//    private func animateSwipeView(gesture: UISwipeGestureRecognizer) {
+//        let translation = gesture.view?.transform
+//    }
+//
     
     func picturesShared(image : UIImage){
         let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        self.present(share, animated: true, completion: nil)
+//        self.present(share, animated: true, completion: nil)
         // opposite animation when share menu
         share.completionWithItemsHandler = {  activity, success, items, error in
-            UIView.animate(withDuration: 0.5, animations: {
-                self.PictureStackView.transform = .identity
+            UIView.animate(withDuration: 0.5) {
+                self.PictureStackView.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.PictureStackView.alpha = 1
-            }, completion: nil)
+            }
         }
+        self.present(share, animated: true, completion: nil)
     }
     
     
@@ -96,33 +97,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     
     @objc func swipeGesture(sender: UISwipeGestureRecognizer?) {
         guard let portrait = windowInterfaceOrientation?.isPortrait else {return}
-        if portrait {
-            UIView.animate(withDuration: 1) {
-                
-                self.swipeUpStackView.transform = CGAffineTransform(translationX: 0, y: -200)
-                self.swipeUpStackView.alpha = 0
-            }
-        } else {
-            UIView.animate(withDuration: 1){
-                self.swipeUpStackView.transform = CGAffineTransform(translationX: -200, y: 0)
-                self.swipeUpStackView.alpha = 0
-            }
+        let transform = portrait ? CGAffineTransform(translationX: 0, y: -300) : CGAffineTransform(translationX: -300, y: 0)
+        let image = self.PictureStackView.asImage()
+        UIView.animate(withDuration: 1) {
+            self.swipeUpStackView.transform = transform
+            self.swipeUpStackView.alpha = 0
+        } completion: { finished in
+            self.picturesShared(image: image)
         }
+
     }
     
-    
-    //        let translationTransform = CGAffineTransform(translationX: 0, y: -300)
-    //        // translation à mettre pour le portrait
-    //        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
-    //            self.swipeUpStackView.transform = translationTransform
-    //        } completion: { success in
-    //            if success {
-    //                self.shareView()
-    //            }
-    //        }
-    //
-    //
-    //    }
     
 //    @objc func shareImage() {
 //        let vc = UIActivityViewController(activityItems: [swipeUpStackView.image!], applicationActivities: [])
@@ -141,21 +126,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         }
     }
     
-    private func sharePictureSheet() {
-        guard let image = UIImage(systemName: ""), let url = URL(string: "https://www.instagram.com") else
-        { return }
-        let shareSheetVC = UIActivityViewController(
-            activityItems:[
-            image,
-            url
-            ],
-            applicationActivities: nil
-        )
-        present(shareSheetVC, animated: true)
-    }
     
-
-    // generate UImage from pciture stack view
+    // generate UImage from picture stack view
     // invoke sharing menu with UImage in parameter
     
     
