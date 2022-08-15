@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     private var tappedImageButtonTag = Int()
     private let imagePicker = UIImagePickerController()
     
+    
     //IBOutlets
     @IBOutlet weak var swipeUpStackView: UIStackView!
     @IBOutlet weak var PictureStackView: UIStackView!
@@ -91,8 +92,7 @@ class ViewController: UIViewController {
         
     }
         
-        private func shareView() {
-            print("")
+    private func shareView() {
             let translationTransform = CGAffineTransform(translationX: 0, y: 0)
             UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseIn) { // check
                 self.swipeUpStackView.transform = translationTransform
@@ -167,10 +167,8 @@ class ViewController: UIViewController {
 
 extension UIView {
 
-    // Using a function since `var image` might conflict with an existing variable
-    // (like on `UIImageView`)
     func asImage() -> UIImage {
-        if #available(iOS 10.0, *) {
+        if #available(iOS 15.0, *) {
             let renderer = UIGraphicsImageRenderer(bounds: bounds)
             return renderer.image { rendererContext in
                 layer.render(in: rendererContext.cgContext)
