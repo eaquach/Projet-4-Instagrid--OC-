@@ -24,12 +24,19 @@ struct LayoutPosition {
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     //Properties used for the methods
     private var tappedImageButtonTag = Int()
     private let imagePicker = UIImagePickerController()
     
+    private var windowInterfaceOrientation: UIInterfaceOrientation? {
+        if #available(iOS 15.0, *) {
+            return UIApplication.shared.windows.first?.windowScene?.interfaceOrientation
+        } else {
+            return UIApplication.shared.statusBarOrientation
+        }
+    }
     
     //IBOutlets
     @IBOutlet weak var swipeUpStackView: UIStackView!
@@ -40,19 +47,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var SwipeArrow: UIImageView!
     
     @IBAction func SwipeActionShare(_ sender: UISwipeGestureRecognizer) {
-
+        
     }
     var swipe : UISwipeGestureRecognizer!
     
     func swipeShare (_ sender: UISwipeGestureRecognizer) {
         switch sender.state {
             case .began, .changed:
-            animateSwipeView(gesture: sender)
-            
+                animateSwipeView(gesture: sender)
+                
             default:
                 break
-    }
-   
+        }
+        
         
     }
     
@@ -60,52 +67,96 @@ class ViewController: UIViewController {
         let translation = gesture.view?.transform
     }
     
-    private func picturesShared(){
     
-}
-
+    func picturesShared(image : UIImage){
+        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.present(share, animated: true, completion: nil)
+        // opposite animation when share menu
+        share.completionWithItemsHandler = {  activity, success, items, error in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.PictureStackView.transform = .identity
+                self.PictureStackView.alpha = 1
+            }, completion: nil)
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutButton[2].setImage(UIImage(named: "Selected"), for: .normal)
         swipeUpStackView.isUserInteractionEnabled = true
-    
+        
         swipe = UISwipeGestureRecognizer(target:self, action: #selector(self.swipeGesture(sender:)))
         swipe.direction = UISwipeGestureRecognizer.Direction.up
         swipeUpStackView.addGestureRecognizer(swipe)
         
         
-      
     }
     
     @objc func swipeGesture(sender: UISwipeGestureRecognizer?) {
-        let translationTransform = CGAffineTransform(translationX: 0, y: -300)
-        // translation à mettre pour le portrait
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+        guard let portrait = windowInterfaceOrientation?.isPortrait else {return}
+        if portrait {
+            UIView.animate(withDuration: 1) {
+                
+                self.swipeUpStackView.transform = CGAffineTransform(translationX: 0, y: -200)
+                self.swipeUpStackView.alpha = 0
+            }
+        } else {
+            UIView.animate(withDuration: 1){
+                self.swipeUpStackView.transform = CGAffineTransform(translationX: -200, y: 0)
+                self.swipeUpStackView.alpha = 0
+            }
+        }
+    }
+    
+    
+    //        let translationTransform = CGAffineTransform(translationX: 0, y: -300)
+    //        // translation à mettre pour le portrait
+    //        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+    //            self.swipeUpStackView.transform = translationTransform
+    //        } completion: { success in
+    //            if success {
+    //                self.shareView()
+    //            }
+    //        }
+    //
+    //
+    //    }
+    
+//    @objc func shareImage() {
+//        let vc = UIActivityViewController(activityItems: [swipeUpStackView.image!], applicationActivities: [])
+//        present(vc, animated: true)
+//    }
+//
+    
+    private func shareView() {
+        let translationTransform = CGAffineTransform(translationX: 0, y: 0)
+        UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseIn) { // check
             self.swipeUpStackView.transform = translationTransform
         } completion: { success in
             if success {
                 self.shareView()
             }
         }
-
-        
     }
-        
-    private func shareView() {
-            let translationTransform = CGAffineTransform(translationX: 0, y: 0)
-            UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseIn) { // check
-                self.swipeUpStackView.transform = translationTransform
-            } completion: { success in
-                if success {
-                    self.shareView()
-                }
-            }
-        }
     
-        
-      // generate UImage from pciture stack view
-        // invoke sharing menu with UImage in parameter
+    private func sharePictureSheet() {
+        guard let image = UIImage(systemName: ""), let url = URL(string: "https://www.instagram.com") else
+        { return }
+        let shareSheetVC = UIActivityViewController(
+            activityItems:[
+            image,
+            url
+            ],
+            applicationActivities: nil
+        )
+        present(shareSheetVC, animated: true)
+    }
+    
+
+    // generate UImage from pciture stack view
+    // invoke sharing menu with UImage in parameter
     
     
     
@@ -156,17 +207,19 @@ class ViewController: UIViewController {
     }
     
     func animateSwipeAndShare() {
-    
-//        let animation = CABasicAnimation(keyPath: "position")
-//        animation.fromValue =
+        
+        //        let animation = CABasicAnimation(keyPath: "position")
+        //        animation.fromValue =
     }
-//    
+    //
     
     
 }
 
-extension UIView {
 
+
+extension UIView {
+    
     func asImage() -> UIImage {
         if #available(iOS 15.0, *) {
             let renderer = UIGraphicsImageRenderer(bounds: bounds)
@@ -197,16 +250,16 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
-   
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
             swipe.direction = .left
-        
+            
         } else { swipe.direction = .up
-    }
-    
-    
+        }
+        
+        
     }
     
     
