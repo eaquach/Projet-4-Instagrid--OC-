@@ -63,10 +63,7 @@ class ViewController: UIViewController {
         
     }
     
-//    private func animateSwipeView(gesture: UISwipeGestureRecognizer) {
-//        let translation = gesture.view?.transform
-//    }
-//
+
     
     func picturesShared(image : UIImage){
         let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)

@@ -235,14 +235,12 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="LLg-n7-Oyg"/>
                                 <include reference="cGU-8t-wTQ"/>
                                 <include reference="uzx-U8-f4P"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="LLg-n7-Oyg"/>
-                            </mask>
                             <mask key="constraints">
                                 <include reference="PiN-PW-gIC"/>
                                 <include reference="T66-I2-fiD"/>
