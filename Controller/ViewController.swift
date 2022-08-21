@@ -67,7 +67,6 @@ class ViewController: UIViewController {
     
     func picturesShared(image : UIImage){
         let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-//        self.present(share, animated: true, completion: nil)
         // opposite animation when share menu
         share.completionWithItemsHandler = {  activity, success, items, error in
             UIView.animate(withDuration: 0.5) {
@@ -97,10 +96,17 @@ class ViewController: UIViewController {
         let transform = portrait ? CGAffineTransform(translationX: 0, y: -300) : CGAffineTransform(translationX: -300, y: 0)
         let image = self.PictureStackView.asImage()
         UIView.animate(withDuration: 1) {
-            self.swipeUpStackView.transform = transform
             self.swipeUpStackView.alpha = 0
+            self.swipeUpStackView.transform = transform
         } completion: { finished in
             self.picturesShared(image: image)
+            if finished {
+                UIView.animate(withDuration: 1) {
+                    self.swipeUpStackView.alpha = 0
+                    self.swipeUpStackView.transform = .identity
+                }
+    
+            }
         }
 
     }

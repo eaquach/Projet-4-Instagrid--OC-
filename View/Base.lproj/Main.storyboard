@@ -97,6 +97,12 @@
                                         <include reference="HXz-Oo-wQY"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" alignment="center" axis="vertical">
+                                    <mask key="subviews">
+                                        <include reference="5mO-36-a6i"/>
+                                        <include reference="HXz-Oo-wQY"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-U8-f4P" userLabel="Picture Stack View">
                                 <rect key="frame" x="64" y="318" width="300" height="300"/>
