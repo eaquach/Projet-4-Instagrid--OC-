@@ -106,11 +106,6 @@ class ViewController: UIViewController {
     }
     
     
-//    @objc func shareImage() {
-//        let vc = UIActivityViewController(activityItems: [swipeUpStackView.image!], applicationActivities: [])
-//        present(vc, animated: true)
-//    }
-//
     
     private func shareView() {
         let translationTransform = CGAffineTransform(translationX: 0, y: 0)
