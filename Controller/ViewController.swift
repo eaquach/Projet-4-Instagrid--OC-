@@ -98,9 +98,9 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 1) {
             self.swipeUpStackView.alpha = 0
             self.swipeUpStackView.transform = transform
-        } completion: { finished in
+        } completion: { success in
             self.picturesShared(image: image)
-            if finished {
+            if success {
                 UIView.animate(withDuration: 1) {
                     self.swipeUpStackView.alpha = 0
                     self.swipeUpStackView.transform = .identity
