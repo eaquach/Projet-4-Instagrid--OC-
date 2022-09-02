@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,11 +17,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Projet_4_Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LayoutStyle" customModule="Projet_4_Instagrid" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLg-n7-Oyg">
-                                <rect key="frame" x="156.66666666666666" y="74" width="114.66666666666666" height="37.666666666666657"/>
+                                <rect key="frame" x="276" y="10" width="115" height="37.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37.670000000000002" id="4lU-Qg-NOh">
                                         <variation key="heightClass=regular-widthClass=regular" constant="75"/>
@@ -41,10 +41,10 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="cGU-8t-wTQ" userLabel="Swipe Up Stack View">
-                                <rect key="frame" x="152.33333333333334" y="237.00000000000003" width="123.33333333333334" height="55.333333333333343"/>
+                                <rect key="frame" x="20" y="199" width="156.5" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="749" image="Arrow Up" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-36-a6i">
-                                        <rect key="frame" x="51.666666666666657" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="BUS-6p-t9v">
@@ -63,7 +63,7 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXz-Oo-wQY">
-                                        <rect key="frame" x="0.0" y="33" width="123.33333333333333" height="22.333333333333329"/>
+                                        <rect key="frame" x="33" y="0.0" width="123.5" height="20"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Swipe up to share">
                                                 <attributes>
@@ -105,7 +105,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-U8-f4P" userLabel="Picture Stack View">
-                                <rect key="frame" x="64" y="318" width="300" height="300"/>
+                                <rect key="frame" x="183.5" y="37.5" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A1U-fF-QiS" userLabel="Upper Stack View">
                                         <rect key="frame" x="10" y="10" width="280" height="135"/>
@@ -162,7 +162,7 @@
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Zu-4N-5ec" userLabel="Layout Stack View">
-                                <rect key="frame" x="79" y="768" width="270" height="70"/>
+                                <rect key="frame" x="518" y="51" width="70" height="270"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-mz-jO9" userLabel="LayoutButton1">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -177,7 +177,7 @@
                                         </connections>
                                     </button>
                                     <button tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-OM-8eK" userLabel="LayoutButton2">
-                                        <rect key="frame" x="100" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="0.0" y="100" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FNz-OM-8eK" secondAttribute="height" multiplier="1:1" id="m02-LF-ujj"/>
                                         </constraints>
@@ -188,7 +188,7 @@
                                         </connections>
                                     </button>
                                     <button tag="2" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb0-lN-ygF" userLabel="LayoutButton3">
-                                        <rect key="frame" x="200" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="0.0" y="200" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Vb0-lN-ygF" secondAttribute="height" multiplier="1:1" id="tMV-Aa-Uf1"/>
                                         </constraints>
